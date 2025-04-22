@@ -1,0 +1,45 @@
+.secao {
+    padding: 15vh 5.6vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.botao {
+    display: inline-flex;
+    font-size: 16px;
+    letter-spacing: -0.1px;
+    font-weight: 500;
+    line-height: 16px;
+    text-decoration: none;
+    background-color: #FDC45F;
+    color: black;
+    border: none;
+    cursor: pointer;
+    justify-content: center;
+    padding: 16px 36px;
+    height: 48px;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 8px;
+}
+
+h2{
+    clear: both;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 40px;
+    padding-top: 5px;
+}
+
+p {
+    color: #768696;
+    margin-bottom: 40px;
+}
+
+span {
+    color: #FDC45F;
+}
+
+img {
+    max-width: 514px;
+}
