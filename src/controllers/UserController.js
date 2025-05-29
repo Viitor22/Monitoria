@@ -1,122 +1,65 @@
-const User = require('../models/User');
+const UserService = require('../services/UserService');
 
 const createUser = async (req, res) => {
     try {
-        const { name, email, password } = req.body;
-
-        if (!name || !email || !password) {
-            return res.status(400).json({ message: "Preencha todos os campos" });
-        }
-
-        const newUser = new User({
-            name,
-            email,
-            password
-
-        });
-
-        await newUser.save();
-        res.status(201).json({ message: "Usuário cadastrado com sucesso", user: newUser });
+        const user = await UserService.createUser(req.body);
+        res.status(201).json({ message: "Usuário cadastrado com sucesso", user });
     } catch (error) {
-        console.log(error);
-        res.status(500).json({ message: "Erro ao criar memória", error });
+        res.status(error.status || 500).json({ message: error.message || "Erro ao criar usuário" });
     }
-
-}
+};
 
 const getUser = async (req, res) => {
     try {
-        const user = await User.find();
-        res.status(200).json(user);
+        const users = await UserService.getAllUsers();
+        res.status(200).json(users);
     } catch (error) {
-        console.log(error);
-        res.status(500).json({ message: "Erro ao buscar usuário", error });
+        res.status(500).json({ message: "Erro ao buscar usuários", error });
     }
-}
+};
 
 const getUserById = async (req, res) => {
     try {
-        const user = await User.findById(req.params.id);
-        if (!user) {
-            return res.status(404).json({ message: "Usuário não encontrada" });
-        }
+        const user = await UserService.getUserById(req.params.id);
         res.status(200).json(user);
     } catch (error) {
-        res.status(500).json({ message: "Erro ao buscar usuário", error });
+        res.status(error.status || 500).json({ message: error.message });
     }
-}
+};
 
 const deleteUser = async (req, res) => {
     try {
-        const user = await User.findById(req.params.id);
-        if (!user) {
-            return res.status(404).json({ message: "Usuário não encontrada" });
-        }
-        res.status(200).json(user);
-        await user.deleteOne();
-
+        const user = await UserService.deleteUserById(req.params.id);
+        res.status(200).json({ message: "Usuário deletado com sucesso", user });
     } catch (error) {
-        res.status(500).json({ message: "Erro ao buscar usuário", error });
+        res.status(error.status || 500).json({ message: error.message });
     }
-}
+};
 
 const updateUser = async (req, res) => {
     try {
-        const { name, email, password } = req.body;
-        const user = await User.findByIdAndUpdate(
-            req.params.id,
-            { name, email, password },
-            { new: true }
-        );
-
-        if (!user) {
-            return res.status(404).json({ message: "Usuário não encontrado" });
-        }
-
+        const user = await UserService.updateUser(req.params.id, req.body);
         res.status(200).json({ message: "Usuário atualizado com sucesso", user });
     } catch (error) {
-        res.status(500).json({ message: "Erro ao atualizar usuário", error });
+        res.status(error.status || 500).json({ message: error.message });
     }
 };
 
 const updateUserPassword = async (req, res) => {
     try {
-        const { password } = req.body;
-        if (!password) {
-            return res.status(400).json({ message: "Nova senha é obrigatória" });
-        }
-
-        const user = await User.findById(req.params.id);
-        if (!user) {
-            return res.status(404).json({ message: "Usuário não encontrado" });
-        }
-
-        user.password = password;
-        await user.save();
-
+        await UserService.updatePassword(req.params.id, req.body.password);
         res.status(200).json({ message: "Senha atualizada com sucesso" });
     } catch (error) {
-        res.status(500).json({ message: "Erro ao atualizar senha", error });
+        res.status(error.status || 500).json({ message: error.message });
     }
 };
 
 const loginUser = async (req, res) => {
     try {
-        const { email, password } = req.body;
-
-        if (!email || !password) {
-            return res.status(400).json({ message: "Email e senha são obrigatórios" });
-        }
-
-        const user = await User.findOne({ email });
-
-        if (!user || user.password !== password) {
-            return res.status(401).json({ message: "Credenciais inválidas" });
-        }
-
+        const user = await UserService.loginUser(req.body);
         res.status(200).json({ message: "Login bem-sucedido", user });
     } catch (error) {
-        res.status(500).json({ message: "Erro ao fazer login", error });
+        res.status(error.status || 500).json({ message: error.message });
     }
 };
 
@@ -128,4 +71,4 @@ module.exports = {
     updateUser,
     updateUserPassword,
     loginUser
-}
+};
