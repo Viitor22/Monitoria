@@ -1,3 +1,8 @@
+.container-hero {
+    padding: 0 28px;
+    background-color: #1E635F;
+}
+
 .secao {
     padding: 15vh 5.6vw;
     display: grid;
@@ -11,8 +16,8 @@
     font-weight: 500;
     line-height: 16px;
     text-decoration: none;
-    background-color: #FDC45F;
-    color: black;
+    background-color: #FF8C5A;
+    color: #fff;
     border: none;
     cursor: pointer;
     justify-content: center;
@@ -23,21 +28,9 @@
     border-radius: 8px;
 }
 
-h2{
-    clear: both;
-    font-weight: 600;
-    display: block;
+.p-hero {
+    color: #fff;
     margin-bottom: 40px;
-    padding-top: 5px;
-}
-
-p {
-    color: #768696;
-    margin-bottom: 40px;
-}
-
-span {
-    color: #FDC45F;
 }
 
 img {

@@ -42,6 +42,14 @@ a {
   }
 }
 
-.container {
-  padding: 0 28px;
+h2{
+    clear: both;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 40px;
+    padding-top: 5px;
+}
+
+span {
+    color: #FF8C5A;
 }
