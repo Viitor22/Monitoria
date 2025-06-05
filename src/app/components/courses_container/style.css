@@ -1,0 +1,82 @@
+main{
+  background-color: #D9D9D9;
+}
+.intro h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #083B3A;
+    padding-top: 20px;
+    padding-left: 40px;
+}
+
+.intro h1{
+    font-size: 2rem;
+    margin-top: 5px;
+    color: #083B3A;
+    padding-top: 20px;
+    padding-left: 40px;
+}
+
+.cursos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-top:80px;
+    justify-content: center;
+}
+
+.curso-card {
+    background-color: white;
+    border: 2px solid #1E635F;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 280px;
+    height: 382px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.curso-img {
+  background-color: white;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  font-weight: bold;
+}
+
+.curso-info {
+  background-color: #1E635F;
+  color: white;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 239px;
+}
+
+.curso-info h3 {
+  font-size: 1rem;
+  margin: 0 0 5px 0;
+}
+
+.curso-info p {
+  font-size: 0.75rem;
+  margin: 3px 0;
+}
+
+.descricao {
+  font-size: 0.72rem;
+  margin-top: 5px;
+}
+
+.conheca-btn {
+  margin-top: 10px;
+  padding: 8px;
+  background-color: #f47f48;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}

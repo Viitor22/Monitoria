@@ -1,0 +1,30 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #D9D9D9;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #083B3A;
+}
+
+.link {
+    margin: 0 24px;
+    text-decoration: none;
+    color: #0f2321;
+    font-weight: 500;
+}
+
+.aluno-btn {
+    background-color: #f47f48;
+    color: white;
+    border: none;
+    margin-left: 16px;
+    padding: 10px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+}
