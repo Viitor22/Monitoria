@@ -43,6 +43,11 @@ main{
   justify-content: center;
   color: #555;
   font-weight: bold;
+
+  img{
+    height: 140px;
+    width: 100%;
+  }
 }
 
 .curso-info {

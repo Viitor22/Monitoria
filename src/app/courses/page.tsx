@@ -1,5 +1,5 @@
-import HeaderCourses from '../components/header_courses/header_courses.tsx'
-import CoursesContainer from '../components/courses_container/courses_container.tsx'
+import HeaderCourses from '../components/header_courses/header_courses'
+import CoursesContainer from '../components/courses_container/courses_container'
 
 const Courses = () => {
     return (

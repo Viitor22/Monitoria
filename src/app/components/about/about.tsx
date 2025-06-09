@@ -1,6 +1,10 @@
 import "./style.css";
 import "../../globals.css";
 
+import { LuBrain } from "react-icons/lu";
+import { FaRegCheckCircle } from "react-icons/fa";
+import { MdMessage } from "react-icons/md";
+
 const About = () => {
     return (
         <>
@@ -14,7 +18,7 @@ const About = () => {
                 <div>    
                     <div className="item-container">
                         <div className="circulo">
-                            
+                            <FaRegCheckCircle className="icon"/>
                         </div>
                     </div>
                     <p className="p-about">
@@ -24,7 +28,7 @@ const About = () => {
                 <div>
                     <div className="item-container">
                         <div className="circulo">
-                            <i className="fi fi-br-brain-circuit"></i>
+                            <LuBrain className="icon"/>
                         </div>
                     </div>
                         <p className="p-about">
@@ -34,7 +38,7 @@ const About = () => {
                 <div>
                     <div className="item-container">
                         <div className="circulo">
-                            <i className="fi fi-br-messages"></i>
+                            <MdMessage className="icon"/>
                         </div>
                     </div>
                         <p className="p-about">

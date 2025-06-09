@@ -1,13 +1,10 @@
 'use client'
 import "./style.css";
 import "../../globals.css";
-import img from "../../assets/hero.png"
 
-import { useRouter } from 'next/navigation'
 import Link from 'next/link';
 
 const HeaderCourses = () => {
-    const router = useRouter()
 
     return (
         <>
@@ -17,7 +14,7 @@ const HeaderCourses = () => {
             <Link href="/" className="link">Home</Link>
             <Link href="/courses" className="link">Cursos</Link>
             <Link href="#" className="link">Contato</Link>
-            <button className="aluno-btn">Já sou aluno</button>
+            <Link href="/login" className="aluno-btn">Já sou aluno</Link>
             </nav>
         </header>
         </>
